@@ -1,0 +1,104 @@
+---
+title: "Exploring Fuel Efficiency by Engine Size"
+author: "Deergh Kataria"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-line-numbers: true
+    fontsize: 1.2em
+    toc: true
+    toc-title: '**Contents**'
+    embed-resources: true
+    grid:
+      body-width: 800px
+    theme: 
+      - superhero
+      - custom-theme.css
+    css: custom-theme.css
+  revealjs: 
+    slide-number: true
+    incremental: false
+    auto-stretch: false
+    embed-resources: true
+    center: true
+    theme:
+      - custom-theme.css
+urlcolor: blue
+progress: true
+controls: true
+execute: 
+  eval: true
+  echo: false
+  warning: false
+---
+
+## Introduction
+
+Understanding how vehicle characteristics affect fuel efficiency is essential for both consumers and automotive manufacturers. One key relationship worth exploring is between **engine displacement** (a proxy for engine size and power) and **fuel efficiency**, typically measured in miles per gallon (MPG). 
+
+In this homework assignment, we analyze data from the `mtcars` dataset, which is available in R. This dataset contains information about various makes and models of cars, including their engine specifications and fuel economy.
+
+In particular, this analysis focuses on how **engine size (displ)** correlates with **highway fuel efficiency (hwy)** across different **vehicle classes**. This allows us to identify whether cars with larger engines tend to consume more fuel, and whether this trend is consistent across types of vehicles such as compact cars, SUVs, and pickups.
+
+Our goals are:
+
+- To compute and summarize fuel efficiency statistics across vehicle classes.
+- To visualize differences in highway mileage using a comparative boxplot.
+- To interpret how vehicle type and engine size may influence real-world fuel economy.
+
+
+## Summary Statistics
+
+The table below presents the **average fuel efficiency** grouped by the number of cylinders:
+
+```{r}
+# Loading required libraries
+library(dplyr)
+library(knitr)
+
+# Calculating average mpg by cylinder count
+mpg_summary <- mtcars %>%
+  group_by(Cylinders = factor(cyl)) %>%
+  summarise(
+    Avg_MPG = round(mean(mpg), 2),
+    .groups = "drop"
+  )
+
+# Displaying table
+kable(mpg_summary, caption = "Average MPG by Number of Cylinders")
+```
+
+## Effect of Cylinder Count on Miles per Gallon
+
+To compare the distribution of fuel efficiency across vehicle types, we use a **boxplot**, which is an effective tool for visualizing:
+
+- The **median** and **interquartile range** (IQR) of a variable.
+- The **spread** of data, including **outliers**.
+- Differences in **distribution shape** between categories.
+
+In this case, a boxplot is ideal because it lets us quickly compare **highway MPG** across multiple **vehicle classes** in one concise visual. We have also used color to distinguish between the classes, and sort them to make interpretation easier.
+
+```{r}
+# Loading plotting library
+library(ggplot2)
+
+# Creating boxplot
+ggplot(mtcars, aes(x = factor(cyl), y = mpg, fill = factor(cyl))) +
+  geom_boxplot() +
+  labs(
+    title = "Miles per Gallon by Engine Cylinder Count",
+    x = "Number of Cylinders",
+    y = "Miles per Gallon (MPG)",
+    fill = "Cylinders"
+  ) +
+  theme_minimal(base_size = 13)
+```
+
+## Interpretation
+
+-   Cars with fewer cylinders (4) tend to have higher MPG, making them more fuel efficient.
+
+-   As the number of cylinders increases, fuel efficiency decreases, due to larger engines consuming more fuel.
+
+-   This suggests a clear inverse relationship between engine size and fuel economy in the dataset.
