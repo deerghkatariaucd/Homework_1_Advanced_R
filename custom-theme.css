@@ -1,0 +1,96 @@
+/*-- scss:rules --*/
+
+/* Base page styling */
+body {
+  background-color: #fff9f5;
+  color:            #3e3e3e;
+  font-family:      "Helvetica Neue", Arial, sans-serif;
+  line-height:      1.6;
+  font-size:        1.05rem;
+  padding:          1.5rem;
+}
+
+/* Title block styling */
+.title-block .title {
+  font-family:  "Georgia", serif;
+  color:        #4f83cc;  /* Pastel blue */
+  text-align:   center;
+  font-size:    2.2rem;
+  margin-bottom: 1.4rem;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family:  "Georgia", serif;
+  color:        #5d8aa8;  /* Sky blue */
+  margin-top:   1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Links */
+a:link,
+a:visited {
+  color:           #e07a5f;  /* Coral */
+  text-decoration: underline;
+  transition:      color 0.3s ease;
+}
+a:hover,
+a:active {
+  color: #c95a3c;
+}
+
+/* Code blocks */
+pre[class*="language-"],
+pre {
+  background-color: #f5f0fa;  /* Light lavender */
+  border:           1px solid #d3cde8;
+  border-radius:    6px;
+  padding:          1em;
+  font-family:      "Courier New", monospace;
+  font-size:        0.95em;
+  overflow-x:       auto;
+  margin:           1em 0;
+}
+
+/* Inline code */
+code {
+  background-color: #ede4f0;
+  padding:          0.25em 0.5em;
+  border-radius:    3px;
+  font-family:      "Courier New", monospace;
+  font-size:        0.95em;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  margin:          1em 0;
+  font-size:       0.95rem;
+}
+th, td {
+  border: 1px solid #f0d5cc;
+  padding: 0.6em 0.9em;
+  background-color: #ffffff;
+}
+th {
+  background-color: #fde7dd;
+  font-weight: 600;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left:    5px solid #f4bfbf;
+  margin:         1.2em 0;
+  padding:        0.6em 1.2em;
+  color:          #4d4d4d;
+  background:     #fff1f0;
+  font-style:     italic;
+}
+
+/* Captions */
+figcaption {
+  font-size: 0.9em;
+  color:     #6a6a6a;
+  text-align: center;
+  margin-top: 0.5em;
+}
