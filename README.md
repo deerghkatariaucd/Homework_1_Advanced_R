@@ -1,3 +1,3 @@
 - This is the same exact file that I have shared for Homework 1.
-- Moreover, I have made 2 changes using my main github account, even though this repository has been created using UCD Email (to follow the step 1) of the github assignment.
+- Moreover, I have made 2 changes using my main github account, even though this repository has been created using UCD Email (to follow the step 1 of the github assignment).
 - Further, 2 changes have been commited to the .qmd file (for the last step)
