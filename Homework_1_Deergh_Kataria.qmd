@@ -42,7 +42,6 @@ In this homework assignment, we analyze data from the `mtcars` dataset, which is
 In particular, this analysis focuses on how **engine size (displ)** correlates with **highway fuel efficiency (hwy)** across different **vehicle classes**. This allows us to identify whether cars with larger engines tend to consume more fuel, and whether this trend is consistent across types of vehicles such as compact cars, SUVs, and pickups.
 
 Our goals are:
-
 - To compute and summarize fuel efficiency statistics across vehicle classes.
 - To visualize differences in highway mileage using a comparative boxplot.
 - To interpret how vehicle type and engine size may influence real-world fuel economy.
