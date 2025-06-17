@@ -96,9 +96,6 @@ ggplot(mtcars, aes(x = factor(cyl), y = mpg, fill = factor(cyl))) +
 ```
 
 ## Interpretation
-
 -   Cars with fewer cylinders (4) tend to have higher MPG, making them more fuel efficient.
-
 -   As the number of cylinders increases, fuel efficiency decreases, due to larger engines consuming more fuel.
-
 -   This suggests a clear inverse relationship between engine size and fuel economy in the dataset.
